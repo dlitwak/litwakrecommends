@@ -1,0 +1,44 @@
+
+  <p>
+    <div id="headliner" class="round">
+	Flash SlideShow
+	</div>
+	<div id="popular" class="round">
+	<section id="home-sub-header" class="round">Popular</section>
+	
+	<% num_popular_posts = 0 %>
+	<% post_link = "" %>
+	
+	<% @posts.each do |post| %>
+	<% num_popular_posts = num_popular_posts + 1 %>
+	<% if num_popular_posts == 1 || num_popular_posts == 7 || num_popular_posts == 8 %>
+	<div id="article-blurb" class="round">
+		<% thumbnail1 = image_tag("thumbnails/thumbnail"+num_popular_posts.to_s+".jpg", :id => "thumbnail1", :alt => "Hostels", :width => "100px", :length => "100px", :class => "round", :style => "float: left; padding:3px" ) %>
+		<%= link_to thumbnail1, post %>
+		<% post_link = "/posts/"+num_popular_posts.to_s %>
+		<h3><%= link_to post.title, "/posts/"+num_popular_posts.to_s %></h3>
+		<%= truncate(post.content, :length => 190) %>
+	</div>
+	<% end %>
+	<% end %>
+
+	</div>
+	<div id="recent" class="round">
+	<section id="home-sub-header" class="round">Recent Posts</section>
+	<% num_recent_posts = 0 %>
+	
+	<% @posts.each do |post| %>
+	<% num_recent_posts = num_recent_posts + 1 %>
+	<% if num_recent_posts == 22 || num_recent_posts == 21 || num_recent_posts == 20 %>
+	<div id="article-blurb" class="round">
+		<% thumbnail1 = image_tag("thumbnails/thumbnail"+num_recent_posts.to_s+".jpg", :id => "thumbnail1", :alt => "Hostels", :width => "100px", :length => "100px", :class => "round", :style => "float: left; padding:3px" ) %>
+		<%= link_to thumbnail1, post %>
+		
+		<h3><%= link_to post.title, post%></h3>
+		<%= truncate(post.content, :length => 190) %>
+	</div>
+	<% end %>
+	<% end %>
+	</div>
+
+  </p>

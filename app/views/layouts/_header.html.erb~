@@ -1,0 +1,14 @@
+      <header>
+        <% logo= image_tag("bigsur.jpg", :alt => "Litwak Recommends", :size => "60", :class => "round") %>
+        <%= link_to logo, root_path%>
+	<nav class="round">
+          <ul>
+            <li><%= link_to "Home", root_path %></li>
+	    <li><%= link_to "About", about_path %></li>
+	    <li><%= link_to "Posts", posts_path %></li>
+	    <li><%= link_to "New", new_path %></li>
+	    <li><%= link_to "Other", other_path %></li>
+            
+          </ul>
+        </nav>
+      </header>

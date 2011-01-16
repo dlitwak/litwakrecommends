@@ -1,0 +1,5 @@
+<select id="<%= country %>" name="<%= country %>">
+<% countries.each do |country| %>
+<option><%= country %></option>
+<% end %>
+</select>

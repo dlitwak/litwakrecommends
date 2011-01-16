@@ -1,0 +1,30 @@
+<h1>All Posts</h1>
+
+<table class="round">
+  <tr>
+	<th>Title</th>
+    <th>Image</th> 
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+	<td style="vertical-align:top"><%= post.title %></td>
+    <td style="vertical-align:top">
+			<% thumbnail1 = image_tag("hostelworld-award2.jpg", :id => "thumbnail1", :alt => "Hostels", :class => "round") %>
+			<%= link_to thumbnail1, post %></td>
+    <td style="vertical-align:top"><%= truncate(post.content, :length => 160) %></td>
+    <td style="vertical-align:top"><%= link_to 'Show', post %></td>
+    <td style="vertical-align:top"><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td style="vertical-align:top"><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<!--
+<%= link_to 'New Post', new_post_path %>
+-->

@@ -1,0 +1,44 @@
+<h1>All Posts</h1>
+
+<table class="round">
+  <tr>
+	<th>Title</th>
+    <th>Image</th> 
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% total = 0 %>
+<% @posts.each do |post| %>
+<% total = total + 1 %>
+  <tr>
+	<td style="vertical-align:top"><%= post.title %></td>
+    <td style="vertical-align:top">
+			<% thumbnail1 = image_tag("thumbnails/thumbnail"+total.to_s+".jpg", :id => "thumbnail1", :alt => "Hostels", :class => "round") %>
+			<%= link_to thumbnail1, post %></td>
+    <td style="vertical-align:top"><%= truncate(post.content, :length => 260) %></td>
+    <td style="vertical-align:top"><%= link_to 'Show', post %></td>
+    <td style="vertical-align:top"><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td style="vertical-align:top"><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <% if total % 5 == 0 %>
+
+  <% end %>
+<% end %>
+</table>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5609456848181056";
+/* postlist */
+google_ad_slot = "5471774812";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<!--
+<%= link_to 'New Post', new_post_path %>
+-->

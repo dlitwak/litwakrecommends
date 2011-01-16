@@ -1,7 +1,27 @@
 SampleApp::Application.routes.draw do
+  #get "hostels/select_country"
+
+  #get "hostels/select_city"
+
+  #get "hostels/index"
+
+  resources :posts do
+    resources :comments
+  end
+
+  #  get "users/new"
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
+  match '/signup', :to => 'users#new'
+  match '/contact', :to =>'pages#contact'
+  match '/about', :to =>'pages#about'
+  match '/help', :to => 'pages#help'
+  #match '/home', :to => 'pages#home'
+  match '/new', :to => 'pages#new'
+  match '/more', :to => 'pages#more'
+  match '/hostels', :to => 'pages#hostels'
+  match '/books', :to => 'pages#books'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -49,6 +69,7 @@ SampleApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
+  root :to => 'pages#home'
 
   # See how all your routes lay out with "rake routes"
 

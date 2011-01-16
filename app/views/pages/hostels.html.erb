@@ -1,0 +1,9 @@
+    <h1>Hostels</h1>
+	<div id="time_div">
+	I don't have the time, but
+	  <%= form_for :update => "time_div", :url => {
+		:action => :say_when },
+		:position => "after", :remote => true do |f| %>
+		<div><%=f.submit "Click Here" %> </div>
+	<% end %>	
+	</div>

@@ -1,0 +1,98 @@
+    <h1>About The Author</h1>
+    <p>
+      <% graphic= image_tag("iceclimbing.jpg", :alt => "Ice Climbing", :class => "round", :style => "float: left; padding: 6px 6px 6px 6px;") %>
+	  <%= link_to graphic, about_path%>
+      I grew up in Santa Monica, California and graduated from Santa Monica High School in 2006. I attended the University of California at Berkeley where I earned my B.S. in Electrical Engineering and Computer Sciences with a minor in Public Policy, and a special interest in Entrepreneurship and Business. I am a founding member of the Gamma Iota chapter of Alpha Tau Omega, and my hobbies include soccer, basketball, trumpet, piano, classical music, and of course, traveling.
+      Since the age of 5 I've been fortunate enough to be able to travel all around the world. My current country count is over 50 countries, and I have reached that number using just about every method possible. 
+	        <% graphic2= image_tag("kiddavid.jpg", :alt => "Kid David", :class => "round", :style => "float: right; padding: 6px 6px 6px 6px;") %>
+	  <%= link_to graphic2, about_path%>
+	  My mother worked and still does work for cruise lines as a naturalist and art history lecturer, which often gets me free travel on various ships. Classical music and trumpet performance have sent me to various countries in Europe and Asia on tour and for competitions. I've studied abroad. I've backpacked in hostels throughout Europe and through the wilderness in South America. In addition to Berkeley and Santa Monica, I have lived in Paris, France and Tallinn, Estonia.
+This blog was created when I realized I have too many friends to give them all quality advice. While I still have much of the world to see I think I have enough valuable insight and experience to warrant a blog and I hope you enjoy it!      
+    </p>
+		        <% graphic3= image_tag("extremeRainbows.jpg", :alt => "WadiRum", :class => "round", :style => "align:center; padding: 6px 6px 6px 6px;") %>
+	  <%= link_to graphic3, about_path%>
+	</br>
+	</br>
+	<script type="text/javascript" src="http://www.ammap.com/visited_countries/swfobject.php"></script>
+<div id="visitedcountries">
+This application is created by <a href="http://www.ammap.com" target="_blank">interactive maps.</a><br>	You can also have your <a href="http://www.ammap.com/visited_countries/" target="_blank">visited countries map</a> on your site.<br><br>	If you see this message, you need to <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">upgrade your flash player.</a></div>
+
+<script type="text/javascript">
+var so = new SWFObject("http://www.ammap.com/visited_countries/visited_countries.swf", "visitedcountries", 728, 450, "7", "#000000");
+
+addLocation('CA', '', '', '');	//Canada 
+addLocation('US', '', '', '');	//United States 
+addLocation('MX', '', '', '');	//Mexico 
+addLocation('BS', '', '', '');	//Bahamas 
+addLocation('CQ', '', '', '');	//Cayman Islands 
+addLocation('CR', '', '', '');	//Costa Rica 
+addLocation('DO', '', '', '');	//Dominican Republic 
+addLocation('SV', '', '', '');	//El Salvador 
+addLocation('JM', '', '', '');	//Jamaica 
+addLocation('NI', '', '', '');	//Nicaragua 
+addLocation('PA', '', '', '');	//Panama 
+addLocation('AR', '', '', '');	//Argentina 
+addLocation('CL', '', '', '');	//Chile 
+addLocation('UY', '', '', '');	//Uruguay 
+addLocation('VE', '', '', '');	//Venezuela 
+addLocation('EG', '', '', '');	//Egypt 
+addLocation('AT', '', '', '');	//Austria 
+addLocation('BE', '', '', '');	//Belgium 
+addLocation('CZ', '', '', '');	//Czech republic 
+addLocation('DK', '', '', '');	//Denmark 
+addLocation('EE', '', '', '');	//Estonia 
+addLocation('FI', '', '', '');	//Finland 
+addLocation('FR', '', '', '');	//France 
+addLocation('DE', '', '', '');	//Germany 
+addLocation('GI', '', '', '');	//Gibraltar 
+addLocation('GR', '', '', '');	//Greece 
+addLocation('HU', '', '', '');	//Hungary 
+addLocation('IE', '', '', '');	//Ireland 
+addLocation('IT', '', '', '');	//Italy 
+addLocation('LV', '', '', '');	//Latvia 
+addLocation('LT', '', '', '');	//Lithuania 
+addLocation('MC', '', '', '');	//Monaco 
+addLocation('NL', '', '', '');	//Netherlands 
+addLocation('PL', '', '', '');	//Poland 
+addLocation('PT', '', '', '');	//Portugal 
+addLocation('RU', '', '', '');	//Russia 
+addLocation('SK', '', '', '');	//Slovakia 
+addLocation('ES', '', '', '');	//Spain 
+addLocation('SE', '', '', '');	//Sweden 
+addLocation('UK', '', '', '');	//United Kingdom 
+addLocation('VA', '', '', '');	//Vatican City 
+addLocation('IL', '', '', '');	//Israel 
+addLocation('JO', '', '', '');	//Jordan 
+addLocation('PS', '', '', '');	//Palestinian Authority 
+addLocation('TR', '', '', '');	//Turkey 
+addLocation('KH', '', '', '');	//Cambodia 
+addLocation('CN', '', '', '');	//China 
+addLocation('JP', '', '', '');	//Japan 
+addLocation('MY', '', '', '');	//Malaysia 
+addLocation('SG', '', '', '');	//Singapore 
+addLocation('KR', '', '', '');	//South Korea 
+addLocation('TH', '', '', '');	//Thailand 
+addLocation('VN', '', '', '');	//Vietnam 
+addToFlash();
+
+so.addVariable("stageWidth", 728);
+so.addVariable("stageHeight", 450);
+so.addVariable("infoOver", "enabled");
+so.addVariable("zoomFunction", "checked");
+so.addVariable("bgColor", "666666");
+so.addVariable("visitedColor", "5EB7DE");
+so.addVariable("notVisitedColor", "CDCDCD");
+so.addVariable("countryBordersColor", "666666");
+so.addVariable("helpTextColor", "000000");
+so.addVariable("helpText", "Mark the area you wish to zoom in");
+
+so.addParam("scale", "noscale");
+so.addParam("salign", "lt");
+
+so.write("visitedcountries");
+</script>
+
+<table width="728" bgcolor="#333333" border="0" cellspacing="4"><tr><td style="color: #FFFFFF; font-face: Arial; font-size: 12px;">  Make your <a href="http://www.ammap.com/visited_countries" target="_blank" style="color: #FFCC33; font-face: Arial; font-size: 12px;">visited countries map</a></td><td align="right"><a href="http://www.amcharts.com/" target="_blank" style="color: #FFCC33; font-face: Arial; font-size: 12px;">Flash charts</a></td></tr></table>
+	</br>
+
+	</br>
