@@ -1,20 +1,40 @@
 class PagesController < ApplicationController
   def home
-    @title="Home"
+	@title="Home"
+	@metadescription = "LitwakRecommends is David Litwak's personal travel blog, with advice on how to save money while backpacking around
+	the world."
 	@posts = Post.all
 	@count = Post.count
   end
-
+  def hostels
+	@hostels = Hostel.all
+	@title = "Litwak Recommends Personal Party Hostel Recommendations"
+	@metadescription = "LitwakRecommends party hostel recommendations. Personal experience has led me to recommend the following hostels for young
+	travelers looking for a good party atmosphere."
+	@posts = Post.all
+  end
   def contact
     @title = "Contact"
+	@metadescription = "Contact LitwakRecommends author David Litwak"
+	@posts = Post.all
   end
 
   def about
-    @title = "About"
+    @title = "About David Litwak"
+	@metadescription = "About LitwakRecommends author David Litwak"
+	@posts = Post.all
   end
   def help
     @title = "Help"
+	@posts = Post.all
   end
+  
+  def live_search
+		@query = params[:query]
+		
+		@results = Hostel.find(:all, :conditions => [ "city LIKE ?", "%" + @query + "%"])
+  end
+  
   
   def country_select
 	englishCities=["London", "Liverpool", "Manchester", "Dover", "Brighton", "Everton"];

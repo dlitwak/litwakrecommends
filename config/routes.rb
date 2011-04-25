@@ -8,6 +8,13 @@ SampleApp::Application.routes.draw do
   resources :posts do
     resources :comments
   end
+  
+  resources :pages do
+	member do
+		post 'live_search'
+	end
+end
+		
 
   #  get "users/new"
   resources :users
@@ -22,6 +29,9 @@ SampleApp::Application.routes.draw do
   match '/more', :to => 'pages#more'
   match '/hostels', :to => 'pages#hostels'
   match '/books', :to => 'pages#books'
+  match '/home', :to => 'pages#home'
+  #match '/live_search', :to => 'pages#live_search'
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

@@ -1,8 +1,31 @@
 
-  <p>
-    <div id="headliner" class="round">
-	Flash SlideShow
+  		  
+	<script type="text/javascript">
+$(window).load(function() {
+    $('#slider').nivoSlider();
+});
+</script>
+<div id="headliner">
+	<div id="slider">
+		<a href="http://litwakrecommends.com/posts/20"><img src="/images/flashimages/slideshowimage2.jpg" alt="" title="#image1caption" /></a>
+		<a href="http://litwakrecommends.com/posts/9"><img src="/images/flashimages/slideshowimage3.jpg" alt="" title="#image2caption" /></a>
+		<a href="http://litwakrecommends.com/posts/4"><img src="/images/flashimages/slideshowimage4.jpg" alt="" title="#image3caption" /></a>
+		<a href="http://litwakrecommends.com/posts/12"><img src="/images/flashimages/slideshowimage5.jpg" alt="" title="#image4caption" /></a>
 	</div>
+	<div id="image1caption" class="nivo-html-caption">
+		<a href="http://litwakrecommends.com/posts/20">My Patagonia Outward Bound Experience</a>
+	</div>
+	<div id="image2caption" class="nivo-html-caption">
+		<a href="http://litwakrecommends.com/posts/9">Couchsurfing</a>
+	</div>
+	<div id="image3caption" class="nivo-html-caption">
+		<a href="http://litwakrecommends.com/posts/4">Discount Airliners</a>
+	</div>
+	<div id="image4caption" class="nivo-html-caption">
+		<a href="http://litwakrecommends.com/posts/12">Cheap Partying Abroad</a>
+	</div>
+</div>
+	<p>
 	<div id="popular" class="round">
 	<section id="home-sub-header" class="round">Popular</section>
 	
@@ -17,7 +40,7 @@
 		<%= link_to thumbnail1, post %>
 		<% post_link = "/posts/"+num_popular_posts.to_s %>
 		<h3><%= link_to post.title, "/posts/"+num_popular_posts.to_s %></h3>
-		<%= truncate(post.content, :length => 190) %>
+		<%= raw truncate(post.content, :length => 190) %>
 	</div>
 	<% end %>
 	<% end %>
@@ -35,10 +58,23 @@
 		<%= link_to thumbnail1, post %>
 		
 		<h3><%= link_to post.title, post%></h3>
-		<%= truncate(post.content, :length => 190) %>
+		<%= raw truncate(post.content, :length => 190) %>
 	</div>
 	<% end %>
 	<% end %>
 	</div>
 
   </p>
+  <div id="lower-ad">
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-5609456848181056";
+		/* lowerlargerbanner */
+		google_ad_slot = "9629288838";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	</div>

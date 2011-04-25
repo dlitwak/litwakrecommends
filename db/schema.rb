@@ -10,12 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101227232249) do
+ActiveRecord::Schema.define(:version => 20110413072148) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
     t.text     "body"
     t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hostels", :force => true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "country"
+    t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

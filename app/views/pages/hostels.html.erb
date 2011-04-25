@@ -1,9 +1,62 @@
-    <h1>Hostels</h1>
-	<div id="time_div">
-	I don't have the time, but
-	  <%= form_for :update => "time_div", :url => {
-		:action => :say_when },
-		:position => "after", :remote => true do |f| %>
-		<div><%=f.submit "Click Here" %> </div>
-	<% end %>	
-	</div>
+    <script>
+		jQuery(function($) {
+  // when the #query field changes
+  $("#query").change(function() {
+    // make a POST call and replace the content
+    $.post('pages/hostels/live_search', function(data) {
+      $("#results").html(data);
+    });
+  });
+})
+	</script>
+	
+	<h1><b>Hostels</b></h1>
+	<p>
+	All the following hostels are my personal recommendations if you are going to a particular city. I like to stay at what are
+	commonly referred to as "party hostels", so a good nights sleep doesn't necessarily make it into the criteria.
+	</p>
+	<p>
+	<b>My Criteria</b></br>
+	- Has a good social area </br>
+	- Has a bar (not a minifridge behind the checkin counter, but an actual bar)</br>
+	- Attracts a young crowd that likes to party</br>
+	- Has an adequate kitchen</br>
+	- Centrally located near the social life</br>
+	- Possible organized excursions like bar crawls, vodka tastings, etc.</br>
+	</p>
+	<p>
+	Many of the hostels listed I have stayed at myself. Some of them are part of a chain, and I have stayed at one or two of them and
+	am recommending the others based on my previous experience (Melting Pot, Oasis and St. Christoper's chains in particular).
+	</p>
+	<p>In certain places, like Krakow, it's almost impossible to go wrong. Pretty much anything in the main area qualifies as a party
+	hostel, and all have bars. In other areas, like the Cinque Terre of France, I think my recommendations are more useful as I often
+	found out about these places by word of mouth.
+	</p>
+	<p>Most of the hostels are in Europe, but there are a select few in South America and Asia as well.
+	</p>
+	
+	Other good hostel websites:</br>
+	<a href="http://www.backpacker-network.de/en/">German Backpackers Network </a> </br>
+	<a href="http://www.famoushostels.com">Europe's Famous Hostels</a>
+	</br>
+
+	
+	<table class="round">
+  <tr>
+	<th>Name</th>
+    <th>City</th> 
+    <th>Country</th>
+    <th>Website</th>
+  </tr>
+<% @hostels.each do |hostel| %>
+
+  <tr>
+	<td style="vertical-align:top"><%= hostel.name %></td>
+    <td style="vertical-align:top"><%= hostel.city %></td>
+	<td style="vertical-align:top"><%= hostel.country %></td>
+	<td style="vertical-align:top"><%= hostel.website %></td>
+	
+  </tr>
+<% end %>
+
+</table>

@@ -1,4 +1,4 @@
-<h1>All Posts</h1>
+<h1>All Posts!</h1>
 
 <table class="round">
   <tr>
@@ -12,19 +12,23 @@
 <% total = 0 %>
 <% @posts.each do |post| %>
 <% total = total + 1 %>
+  <% if total % 5 == 0 %>
+
+
+  <% end %>
   <tr>
 	<td style="vertical-align:top"><%= post.title %></td>
     <td style="vertical-align:top">
 			<% thumbnail1 = image_tag("thumbnails/thumbnail"+total.to_s+".jpg", :id => "thumbnail1", :alt => "Hostels", :class => "round") %>
 			<%= link_to thumbnail1, post %></td>
-    <td style="vertical-align:top"><%= truncate(post.content, :length => 260) %></td>
+    <td style="vertical-align:top"><%= raw truncate(post.content, :length => 260) %></td>
     <td style="vertical-align:top"><%= link_to 'Show', post %></td>
-    <td style="vertical-align:top"><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td style="vertical-align:top"><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-  <% if total % 5 == 0 %>
+	<td></td>
+	<td></td>
 
-  <% end %>
+	
+  </tr>
+
 <% end %>
 </table>
 <script type="text/javascript"><!--
